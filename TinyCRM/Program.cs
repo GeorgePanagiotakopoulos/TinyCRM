@@ -6,8 +6,17 @@ namespace TinyCRM
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("learning gir");
+            Console.WriteLine("give me your AFM");
+            IsValidAfm("9090");
+
         }
+        public static bool IsValidAfm(string afm)
+        { int numericafm;
+        
+        if (int.TryParse(afm))
+            {
+
+            }
+         }
     }
 }
