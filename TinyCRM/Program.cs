@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace TinyCRM
 {
@@ -6,17 +7,22 @@ namespace TinyCRM
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("give me your AFM");
-            IsValidAfm("9090");
+            string path = @"C:\Users\panag\devel\TinyCRM\TinyCrm\TinyCRM\productlist.csv";
+
+            if (!File.Exists(path))
+            {
+                // Create a file to write to.
+               string[] createText = { "Hello", "And", "Welcome" };
+               File.WriteAllLines(path, createText);
+            }
+
+               // Open the file to read from.
+            string[] readText = File.ReadAllLines(path);
+            foreach (string s in readText)
+            {
+                Console.WriteLine(s);
+            }
 
         }
-        public static bool IsValidAfm(string afm)
-        { int numericafm;
-        
-        if (int.TryParse(afm))
-            {
-
-            }
-         }
     }
 }
